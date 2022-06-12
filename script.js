@@ -10,6 +10,8 @@ let task={
     description:'',
     status:'',
 }
+
+
 function loadTasks(status){
  let data=ArrayTasks.reverse().find((el) =>el.status===status)
     if(data){
@@ -20,9 +22,18 @@ function loadTasks(status){
         <p>${data.description}</p>
       </div>`
         document.querySelector(`#${status}>.rows`).append(div)
-    }
-        
+    }       
 }
+
+function columnsLength(){
+    const columns=document.querySelector('#todo>.rows').children.length
+    document.querySelector('#todo> .title>h4>span').innerHTML=columns
+    const columns1=document.querySelector('#doing>.rows').children.length
+    document.querySelector('#doing> .title>h4>span').innerHTML=columns1
+    const columns2=document.querySelector('#done>.rows').children.length
+    document.querySelector('#done> .title>h4>span').innerHTML=columns2
+}
+
 function crateTaskBoard(){
    if(document.querySelector('.task-board')){
          document.querySelector('.task-board').remove()
@@ -51,9 +62,6 @@ function crateTaskBoard(){
     document.body.append(taskBoard)
 }
 
-
-addTaskButton.addEventListener('click',crateTaskBoard)
-
 function addSubtask(){
     console.log('add subtask')
 }
@@ -69,6 +77,13 @@ function CreateTask(){
         }
         ArrayTasks.push(task)
         loadTasks(task.status)
+        columnsLength()
 taskBoard.remove()
 console.log(ArrayTasks)
 }
+
+function init(){
+    columnsLength()
+    addTaskButton.addEventListener('click',crateTaskBoard)
+}
+init()
