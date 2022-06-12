@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Kanban</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <div></div>
+          <div></div>
+          <div></div>
+          <h2>kanban</h2>
+        </div>
+        <div class="platform"><h2>Platform Launch</h2></div>
+        <div class="wrapper">
+          <div class="add"><button class="add-task">+Add New Task</button></div>
+          <div class="dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+        </div>
+      </header>
+      <main>
+        <nav>
+          <h5>All Boards <span>(3)</span></h5>
+          <ul class="boards">
+            <li><i class="fa-solid fa-table"></i>Platform Launch</li>
+            <li><i class="fa-solid fa-table"></i>Marketing Plan</li>
+            <li><i class="fa-solid fa-table"></i>Roadmap</li>
+          </ul>
+          <div class="new-board">
+            <i class="fa-solid fa-table"></i>+Create New Board
+          </div>
+        </nav>
+
+        <section>
+          <div class="columns" id="todo">
+            <div class="title"><h4>🟢 todo(<span>4</span>)</h4></div>
+            <div class="rows">
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+            </div>
+          </div>
+          <div class="columns" id="doing">
+            <div class="title"><h4>🟣 doing(<span>4</span>)</h4></div>
+            <div class="rows">
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+            </div>
+          </div>
+          <div class="columns" id="done">
+            <div class="title"><h4>🔵 done(<span>4</span>)</h4></div>
+            <div class="rows">
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+              <div class="item">
+                <h5>Build UI for onboarding flow</h5>
+                <p>0 of 3 subtasks</p>
+              </div>
+            </div>
+          </div>
+      </section>
+      </main>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
