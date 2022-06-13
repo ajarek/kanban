@@ -27,13 +27,16 @@ header{
     width: 100%;
     height: 80px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    font-size: 0.7em;
 }
 .logo{
     letter-spacing: 1px;
     display: flex;
+    flex-wrap:wrap ;
     align-items: center;
     justify-content: center;
 }
@@ -53,7 +56,7 @@ header{
    font-weight: 400;  
  }
  .wrapper{
-    width: 200px;
+    width: 320px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,14 +67,11 @@ header{
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 25px;
-    font-size: 1.2rem;
-
  }
  main{
     width: 100%;
     display: grid;
-    grid-template-columns:1fr 3fr ;
-   
+    grid-template-columns:1fr 3fr ; 
  }
  nav{
     display: flex;
@@ -98,7 +98,6 @@ header{
     padding: 0.7rem;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
-
     transition: background 0.3s ease-in-out;
  }
     .boards >li:hover{
@@ -116,7 +115,6 @@ header{
     padding: 0.7rem;
     cursor: pointer;
  }
- 
  section{
     width: 100%;
     min-height:calc(100vh - 80px);
@@ -142,8 +140,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 1rem;
-   
+    margin-top: 1rem;  
  }
  .item{
       width: 100%;
@@ -158,13 +155,11 @@ header{
     border-radius: 5px;
     border: solid red;
  }
- .item>h5{
-   
-    font-size: 1.1rem;
+ .item>h5{  
+    font-size: 01rem;
     font-weight: 400;
  }
- .item>p{
-      
+ .item>p{    
     font-size: 0.9rem;
     color: var(--gray);
  }
@@ -223,6 +218,28 @@ header{
    outline: none;
    border:1px solid var(--gray);
    border-radius: 3px;
-   color: var(--light);
-   
+   color: var(--light); 
+ }
+ .burger{
+   font-size: 1.5rem;
+   cursor: pointer;
+   color: var(--violet);
+ }
+   .burger:hover{
+      color: var(--light);
+   }
+  .none{
+   display: none;
+ }
+ nav.active{
+   display: flex;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: var(--violet);
+ }
+ @media screen and (max-width: 400px){
+    section{
+        grid-template-columns: 1fr;
+    }  
  }

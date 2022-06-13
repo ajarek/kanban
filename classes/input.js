@@ -9,7 +9,6 @@ export class Input{
         input.classList.add(this.classList)
         input.setAttribute('type',this.type)
         input.setAttribute('placeholder',this.placeholder)
-        return input
-       
+        return input     
     }
 }

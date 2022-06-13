@@ -2,15 +2,46 @@ import { Label } from "./classes/label.js"
 import { Input } from "./classes/input.js"
 import { Button } from "./classes/button.js"
 import { Select } from "./classes/select.js"
+
 const addTaskButton=document.querySelector('.add-task')
 let ArrayTasks=[]
-let task={
-   
+let task={ 
     title:'',
     description:'',
     status:'',
 }
 
+
+const mediaQuery = window.matchMedia('(max-width: 768px)')
+
+function handleTabletChange(e) {
+  
+  if (e.matches) {
+       if(document.querySelector('.burger')){
+        document.querySelector('.burger').remove()
+    }
+        const burger = document.createElement("div");
+        burger.classList.add('burger');
+        burger.innerHTML = `<i class="fa-solid fa-bars"></i>`
+        burger.addEventListener('click',()=>{
+            document.querySelector('nav').classList.toggle('active')         
+        })
+        document.querySelector('.wrapper').append(burger)
+        document.querySelector('nav').classList.add('none')
+        document.querySelector('main').style.gridTemplateColumns='1fr'
+  }
+    else {
+        if(document.querySelector('.burger')){
+            document.querySelector('.burger').remove()
+            document.querySelector('nav').classList.remove('none')
+            document.querySelector('main').style.gridTemplateColumns='1fr 3fr'
+            document.querySelector('nav').classList.remove('active')
+        }
+}
+}
+
+mediaQuery.addEventListener('change',handleTabletChange)
+handleTabletChange(mediaQuery)
 
 function loadTasks(status){
  let data=ArrayTasks.reverse().find((el) =>el.status===status)
@@ -75,11 +106,15 @@ function CreateTask(){
             description:inputs[1].value,
             status:[...options].filter((el) => el.selected)[0].value
         }
-        ArrayTasks.push(task)
+        if(task.title.length>0 && task.description.length>0){
+            ArrayTasks.push(task)
         loadTasks(task.status)
         columnsLength()
-taskBoard.remove()
-console.log(ArrayTasks)
+        taskBoard.remove()
+        }
+        else{
+            taskBoard.remove()     
+        }
 }
 
 function init(){
